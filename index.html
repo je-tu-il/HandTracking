@@ -47,7 +47,17 @@
 
     .hint{font-size:12px; color:var(--muted)}
     .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; background:#0f1318;border:1px solid var(--border); padding:2px 6px; border-radius:6px}
-  </style>
+  
+header, header .actions { gap: .75rem; flex-wrap: wrap; }
+.stage { min-width: 0; }
+.toolbar .tool, header .btn { min-height: 40px; }
+:where(button, input, select):focus-visible { outline: 2px solid #8edafa; outline-offset: 2px; }
+@media (max-width: 680px) {
+  .toolbar { min-width: 0; }
+  .floating-ui { flex-wrap: wrap; max-width: calc(100% - 1rem); }
+  .hint { max-width: 100%; overflow-wrap: anywhere; }
+}
+</style>
 
   <!-- MediaPipe Hands (legacy) CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
